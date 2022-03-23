@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = "./proto";
+
+service AccountService {
+	rpc AuthenticateByEmailAndPassword(User) returns (Account) {}
+}
+
+message User {
+    string email = 1;
+    string password = 2;
+}
+
+message Account {
+    string token = 1;
+}
+
+message Nothing {}
